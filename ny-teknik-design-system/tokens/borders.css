@@ -1,0 +1,17 @@
+:root{
+--radius-none:0;
+--radius-xs:2px;          /* chips, buttons */
+--radius-sm:3px;
+--radius-pill:999px;      /* social circles only */
+--border-width:1px;
+--border-width-strong:2px;
+--rule:1px solid var(--nt-line);
+--rule-strong:2px solid var(--nt-ink);
+--marker-width:10px;      /* the red square before section headings */
+
+/* Ny Teknik is a flat, print-derived system: shadows are near-absent. */
+--shadow-none:none;
+--shadow-raised:0 1px 3px rgba(0,0,0,.10);   /* dropdowns, sticky header only */
+--shadow-overlay:0 8px 24px rgba(0,0,0,.16); /* modals, paywall */
+--scrim-image:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,0,0,.65) 100%); /* @kind other */
+}

@@ -1,0 +1,8 @@
+/* Ny Teknik's real faces, supplied by the newsroom.
+   Rubriker (headlines)  Gotham XNarrow Black 900
+   Ingress (dek)         Gotham Narrow Bold 700
+   Brödtext (body)       Merriweather
+   Icons                 Foundation Icon Fonts 3 (MIT, ZURB) — the site's own icon font */
+@font-face{font-family:"Merriweather";src:url("../assets/fonts/Merriweather-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"foundation-icons";src:url("../assets/fonts/foundation-icons.woff") format("woff");font-weight:normal;font-style:normal;font-display:block}
+/* Lokal provversion: endast medfoljande typsnitt anvands. */

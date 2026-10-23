@@ -1,0 +1,38 @@
+:root{
+--font-display:"Gotham XNarrow","Helvetica Neue Condensed",Arial,sans-serif;
+--font-dek:"Gotham Narrow","Helvetica Neue",Arial,sans-serif;
+--font-ui:"Gotham Narrow","Helvetica Neue",Arial,sans-serif;
+--font-serif:"Merriweather",Georgia,"Times New Roman",serif;
+--font-mono:ui-monospace,"SF Mono",Menlo,monospace;
+
+--weight-regular:400;
+--weight-medium:500;
+--weight-semibold:500;   /* Gotham Narrow Medium */
+--weight-bold:700;
+--weight-display:900;        /* Gotham XNarrow 900 — all headlines */
+--display-stretch:normal; /* @kind font */
+--dek-stretch:normal; /* @kind font */
+
+/* headlines — condensed grotesque, tight leading, slight negative tracking */
+--type-h1-size:44px;   --type-h1-lh:1.05;  --type-h1-ls:-0.01em;
+--type-h2-size:32px;   --type-h2-lh:1.08;  --type-h2-ls:-0.01em;
+--type-h3-size:24px;   --type-h3-lh:1.12;  --type-h3-ls:-0.005em;
+--type-teaser-lg-size:22px; --type-teaser-lg-lh:1.14;
+--type-teaser-size:18px;    --type-teaser-lh:1.18;
+--type-teaser-sm-size:15px; --type-teaser-sm-lh:1.24;
+
+/* deks / standfirst — condensed grotesque, bold */
+--type-dek-size:19px;  --type-dek-lh:1.38;
+
+/* body — serif */
+--type-body-size:16px; --type-body-lh:1.72;
+--type-body-sm-size:14px; --type-body-sm-lh:1.62;
+
+/* labels + meta — UI sans */
+--type-kicker-size:12px; --type-kicker-ls:0.07em;
+--type-label-size:13px;
+--type-nav-size:14px;
+--type-meta-size:12px;
+--type-caption-size:12px;
+--type-section-size:15px; --type-section-ls:0.06em;
+}

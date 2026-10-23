@@ -1,0 +1,30 @@
+/* Foundation Icon Fonts 3 — the icon set nyteknik.se ships.
+   Full codepoint map at https://zurb.com/playground/foundation-icon-fonts-3
+   Use the Icon component, or these classes directly. */
+:root{--font-icons:"foundation-icons";--icon-size:20px /* @kind spacing */}
+[class^="fi-"],[class*=" fi-"]{font-family:var(--font-icons);font-style:normal;font-weight:normal;font-variant:normal;text-transform:none;line-height:1;display:inline-block;text-decoration:inherit;-webkit-font-smoothing:antialiased}
+.fi-magnifying-glass:before{content:"\f16c"}
+.fi-list:before{content:"\f169"}
+.fi-mail:before{content:"\f16d"}
+.fi-torso:before{content:"\f1fe"}
+.fi-share:before{content:"\f1ad"}
+.fi-link:before{content:"\f165"}
+.fi-rss:before{content:"\f1aa"}
+.fi-bookmark:before{content:"\f11f"}
+.fi-play-video:before{content:"\f197"}
+.fi-arrow-right:before{content:"\f10b"}
+.fi-arrow-left:before{content:"\f10a"}
+.fi-next:before{content:"\f17c"}
+.fi-previous:before{content:"\f19c"}
+.fi-x:before{content:"\f217"}
+.fi-quote:before{content:"\f1a3"}
+.fi-telephone:before{content:"\f1f8"}
+.fi-clock:before{content:"\f12b"}
+.fi-lock:before{content:"\f16a"}
+.fi-graph-bar:before{content:"\f153"}
+.fi-graph-trend:before{content:"\f156"}
+.fi-social-facebook:before{content:"\f1c4"}
+.fi-social-twitter:before{content:"\f1e4"}
+.fi-social-linkedin:before{content:"\f1d0"}
+.fi-social-instagram:before{content:"\f1cd"}
+.fi-social-youtube:before{content:"\f1ea"}

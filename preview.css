@@ -1,0 +1,21 @@
+*{box-sizing:border-box}
+body{background:var(--surface-sunken)}
+.review-bar{display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);padding:var(--space-3) var(--gutter);background:var(--surface-page);border-bottom:var(--rule);font-family:var(--font-ui);font-size:var(--type-nav-size);flex-wrap:wrap}
+.review-bar nav{display:flex;align-items:center;gap:var(--space-2);flex-wrap:wrap}
+.review-bar button{background:transparent;border:var(--rule);border-radius:var(--radius-xs);color:var(--nt-ink);padding:var(--space-3);min-height:var(--space-12);font-family:var(--font-ui);font-size:var(--type-label-size);cursor:pointer;transition:var(--transition-hover)}
+.review-bar button[aria-pressed=true]{background:var(--nt-navy);color:var(--text-inverse);border-color:var(--nt-navy)}
+.review-bar button:hover{border-color:var(--nt-navy)}
+.review-bar a{padding:var(--space-3) var(--space-2)}
+.review-caption{max-width:var(--container-max);margin:var(--space-4) auto;padding:0 var(--gutter);font-family:var(--font-ui);font-size:var(--type-meta-size);color:var(--text-muted);text-align:center}
+.article{width:min(390px,100%);margin:0 auto var(--space-12);background:var(--surface-page)}
+.article-copy{max-width:var(--column-main);margin-inline:auto;padding:var(--space-8) var(--gutter)}
+.kicker{font-family:var(--font-ui);font-size:var(--type-kicker-size);font-weight:var(--weight-bold);letter-spacing:var(--type-kicker-ls);color:var(--nt-red);margin:0 0 var(--space-3);text-transform:uppercase}
+.article-copy h1{margin:0 0 var(--space-4)}
+.preamble{font-family:var(--font-dek);font-weight:var(--weight-bold);font-size:var(--type-dek-size);line-height:var(--type-dek-lh);margin-bottom:var(--space-4)}
+.article-copy>p:last-child{margin-bottom:0}
+#retro-frame{display:block;width:100%;height:560px;border:none;overflow:hidden}
+.after{padding-top:var(--space-8)}
+.after h2{margin-bottom:var(--space-4)}
+.placeholder-note{font-family:var(--font-ui);font-size:var(--type-meta-size);color:var(--text-muted);margin-top:var(--space-6)}
+@media(max-width:480px){.article-copy h1{font-size:var(--type-h2-size);line-height:var(--type-h2-lh)}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}

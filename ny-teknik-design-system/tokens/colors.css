@@ -1,0 +1,60 @@
+:root{
+/* --- brand ---------------------------------------------------------- */
+--nt-red:#de3526;            /* UI red: kickers, chips, markers, links-on-hover */
+--nt-red-logo:#e43424;       /* the red in the wordmark only */
+--nt-red-dark:#b62a1d;       /* hover / press */
+--nt-red-tint:#fbe6e5;       /* 8% wash, used behind alerts + live labels */
+--nt-navy:#0c446c;           /* the blue in the wordmark; headers, footers */
+--nt-navy-dark:#08304d;
+--nt-navy-tint:#e7eef3;
+
+/* --- data / graphics palette (Ny Teknik infographics) ---------------- */
+--nt-blue-900:#12427e;
+--nt-blue-700:#4480c2;
+--nt-blue-500:#5e8ec7;
+--nt-blue-300:#82a7cf;
+--nt-blue-100:#c2d0da;
+--nt-graphic-bg:#e0e6e8;
+
+/* --- neutrals -------------------------------------------------------- */
+--nt-ink:#141414;
+--nt-ink-2:#333333;
+--nt-ink-3:#6b6b6b;
+--nt-ink-4:#9a9a9a;
+--nt-line:#e6e6e6;
+--nt-line-strong:#d0d0d0;
+--nt-surface:#ffffff;
+--nt-surface-2:#f7f7f7;
+--nt-surface-3:#f0f1f2;
+--nt-black:#000000;
+
+/* --- semantic aliases ------------------------------------------------ */
+--text-heading:var(--nt-ink);
+--text-body:var(--nt-ink-2);
+--text-muted:var(--nt-ink-3);
+--text-caption:var(--nt-ink-3);
+--text-inverse:#ffffff;
+--text-kicker:var(--nt-red);
+--text-link:var(--nt-navy);
+--text-link-hover:var(--nt-red);
+
+--surface-page:var(--nt-surface);
+--surface-card:var(--nt-surface);
+--surface-sunken:var(--nt-surface-2);
+--surface-rail:var(--nt-surface-2);
+--surface-header:#ffffff;
+--surface-footer:var(--nt-navy);
+--surface-graphic:var(--nt-graphic-bg);
+
+--border-hairline:var(--nt-line);
+--border-emphasis:var(--nt-ink);
+--marker-section:var(--nt-red);
+
+--action-primary-bg:var(--nt-red);
+--action-primary-bg-hover:var(--nt-red-dark);
+--action-primary-fg:#ffffff;
+--action-secondary-bg:var(--nt-navy);
+--action-secondary-bg-hover:var(--nt-navy-dark);
+--action-outline-fg:var(--nt-red);
+--focus-ring:var(--nt-navy);
+}
