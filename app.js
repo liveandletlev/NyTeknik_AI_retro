@@ -1,4 +1,4 @@
-import {projects, content, steps} from './content.js?v=20261023-skin2';
+import {projects, content, steps} from './content.js?v=20261023-balanced1';
 const $ = id => document.getElementById(id);
 let current='cobra',expanded=false;
 const tabButtons=[...document.querySelectorAll('[role=tab]')];
@@ -118,7 +118,7 @@ $('skin-close').addEventListener('click',()=>setExpanded(false,{focus:true}));
 function stopSources(){audioSources.forEach(source=>{source.onended=null;try{source.stop();}catch{}source.disconnect();});audioSources=[];audioGains.forEach(gain=>gain.disconnect());audioGains=[];}
 function pauseAudio({reset=false}={}){audioToken++;if(audioPlaying)audioOffset=audioPosition();audioPlaying=false;audioPending=false;stopSources();cancelAnimationFrame(audioFrame);if(reset)audioOffset=0;audioUi();drawProgress();}
 async function loadAudio(){
-  if(!audioLoading)audioLoading=Promise.all(['dry','wet'].map(async name=>{const response=await fetch(`assets/enhancer-${name}.mp3`);if(!response.ok)throw Error('Ljudfil saknas');return audioContext.decodeAudioData(await response.arrayBuffer());})).then(buffers=>{if(Math.abs(buffers[0].duration-buffers[1].duration)>.03)throw Error('Ljudfilerna är inte synkroniserade');audioBuffers=buffers;return buffers;}).catch(error=>{audioLoading=null;throw error;});
+  if(!audioLoading)audioLoading=Promise.all(['dry','wet'].map(async name=>{const response=await fetch(`assets/enhancer-${name}.mp3?v=20261023-balanced1`);if(!response.ok)throw Error('Ljudfil saknas');return audioContext.decodeAudioData(await response.arrayBuffer());})).then(buffers=>{if(Math.abs(buffers[0].duration-buffers[1].duration)>.03)throw Error('Ljudfilerna är inte synkroniserade');audioBuffers=buffers;return buffers;}).catch(error=>{audioLoading=null;throw error;});
   return audioLoading;
 }
 $('play-audio').addEventListener('click',async()=>{
