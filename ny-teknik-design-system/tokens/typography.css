@@ -1,7 +1,7 @@
 :root{
---font-display:"Gotham XNarrow","Helvetica Neue Condensed",Arial,sans-serif;
---font-dek:"Gotham Narrow","Helvetica Neue",Arial,sans-serif;
---font-ui:"Gotham Narrow","Helvetica Neue",Arial,sans-serif;
+--font-display:Arial,sans-serif;
+--font-dek:Arial,sans-serif;
+--font-ui:Arial,sans-serif;
 --font-serif:"Merriweather",Georgia,"Times New Roman",serif;
 --font-mono:ui-monospace,"SF Mono",Menlo,monospace;
 
@@ -9,7 +9,7 @@
 --weight-medium:500;
 --weight-semibold:500;   /* Gotham Narrow Medium */
 --weight-bold:700;
---weight-display:900;        /* Gotham XNarrow 900 — all headlines */
+--weight-display:700;        /* Gotham XNarrow 900 — all headlines */
 --display-stretch:normal; /* @kind font */
 --dek-stretch:normal; /* @kind font */
 

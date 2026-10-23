@@ -1,4 +1,4 @@
-import {projects, content, steps} from './content.js';
+import {projects, content, steps} from './content.js?v=20261023-skin2';
 const $ = id => document.getElementById(id);
 let current='cobra',expanded=false;
 const tabButtons=[...document.querySelectorAll('[role=tab]')];
@@ -91,14 +91,30 @@ before.addEventListener('ended',()=>{pauseVideo();$('play-cobra').innerHTML='<i 
 let audioContext,audioBuffers,audioLoading,audioSources=[],audioGains=[],audioOn=false,audioPlaying=false,audioPending=false,audioOffset=0,audioStart=0,audioToken=0,audioFrame=0;
 function audioUi(){
   $('eleven').setAttribute('aria-pressed',String(audioOn));
-  $('effect-state').textContent=audioOn?'Effekt på':'Effekt av';
+  $('effect-state').textContent=audioOn?'ELVA AKTIVERAD':'ORIGINALLJUD';
+  document.querySelector('#demo-enhancer .enhancer-skin').classList.toggle('effect-on',audioOn);
   $('play-audio').innerHTML=audioPending?'Laddar…':audioPlaying?'Pausa':'<i class="fi-play-video" aria-hidden="true"></i> Lyssna';
   $('play-audio').disabled=audioPending;
-  $('audio-state').textContent=audioPending?'Laddar ljud':audioPlaying?'Spelar nu':audioOffset>0?'Pausad':'Redo att lyssna';
+  $('audio-state').textContent=audioPending?'LADDAR LJUD':audioPlaying?'SPELAR NU':audioOffset>0?'PAUSAD':'REDO ATT LYSSNA';
 }
 function audioDuration(){return audioBuffers?Math.min(...audioBuffers.map(b=>b.duration)):16;}
 function audioPosition(){return audioPlaying?Math.max(0,Math.min(audioDuration(),audioOffset+audioContext.currentTime-audioStart)):audioOffset;}
-function drawProgress(){const seconds=audioPosition(),percent=seconds/audioDuration()*100;$('audio-time').textContent=`0:${String(Math.floor(seconds)).padStart(2,'0')}`;$('audio-progress-fill').style.width=`${percent}%`;document.querySelector('.audio-progress').setAttribute('aria-valuenow',String(Math.round(percent)));if(audioPlaying)audioFrame=requestAnimationFrame(drawProgress);}
+function drawProgress(){const seconds=audioPosition(),percent=seconds/audioDuration()*100;$('audio-time').textContent=`0:${String(Math.floor(seconds)).padStart(2,'0')}`;$('audio-progress-fill').style.width=`${percent}%`;document.querySelector('.audio-progress').setAttribute('aria-valuenow',String(Math.round(percent)));drawMeters(seconds);if(audioPlaying)audioFrame=requestAnimationFrame(drawProgress);}
+const meterRows=[...document.querySelectorAll('#demo-enhancer .meter-segments')].map(row=>[...row.children]);
+function drawMeters(seconds){
+  const buffer=audioBuffers?.[Number(audioOn)];
+  meterRows.forEach((bars,channel)=>{
+    let level=0;
+    if(audioPlaying&&buffer){
+      const data=buffer.getChannelData(Math.min(channel,buffer.numberOfChannels-1));
+      const start=Math.floor(seconds*buffer.sampleRate),end=Math.min(data.length,start+1024);
+      let sum=0;for(let i=start;i<end;i++)sum+=data[i]*data[i];
+      level=Math.min(1,Math.sqrt(sum/Math.max(1,end-start))*3);
+    }
+    bars.forEach((bar,index)=>bar.classList.toggle('lit',index<Math.round(level*35)));
+  });
+}
+$('skin-close').addEventListener('click',()=>setExpanded(false,{focus:true}));
 function stopSources(){audioSources.forEach(source=>{source.onended=null;try{source.stop();}catch{}source.disconnect();});audioSources=[];audioGains.forEach(gain=>gain.disconnect());audioGains=[];}
 function pauseAudio({reset=false}={}){audioToken++;if(audioPlaying)audioOffset=audioPosition();audioPlaying=false;audioPending=false;stopSources();cancelAnimationFrame(audioFrame);if(reset)audioOffset=0;audioUi();drawProgress();}
 async function loadAudio(){

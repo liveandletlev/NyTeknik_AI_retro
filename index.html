@@ -6,8 +6,8 @@
   <meta name="color-scheme" content="light">
   <title>Gammal kod, nytt liv – tre experiment</title>
   <meta name="description" content="Utforska tre försök med ai och baklängeskonstruktion: Cobra Triangle, Krakel Spektakel och Winamp-tillägget Enhancer.">
-  <link rel="stylesheet" href="ny-teknik-design-system/styles.css">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="ny-teknik-design-system/styles.css?v=20261023-skin2">
+  <link rel="stylesheet" href="styles.css?v=20261023-skin2">
 </head>
 <body>
 <main class="lab" id="lab">
@@ -34,7 +34,12 @@
         <span class="diagonal-line" aria-hidden="true"></span><span class="image-label original-label">Original</span><span class="image-label new-label">Vår version</span>
       </div>
       <div class="compact-visual" data-preview="krakel" hidden><div class="krakel-stage compact-krakel"><img src="assets/krakel-preview.jpg" width="600" height="800" alt="Bokstavsleken med ordet ankare." loading="lazy"></div></div>
-      <div class="compact-visual compact-audio" data-preview="enhancer" hidden><img src="assets/eleven-icon.png" width="160" height="160" alt="Elva-knappens ikon från vår ljudapp." loading="lazy"><div><p class="nt-kicker">LYSSNA</p><h3>Hur låter elva?</h3><p>16 sekunder musik.<br>En knapp. Två versioner.</p></div></div>
+      <div class="compact-enhancer" data-preview="enhancer" hidden role="img" aria-label="Vår Enhancer-app med grön låtdisplay, stereomätare och metallknappen Take it to Eleven."><div class="skin-shell"><div class="enhancer-skin" aria-hidden="true">
+          <div class="skin-titlebar"><span class="skin-grip"></span><strong>ENHANCER</strong><span class="skin-ridges"></span><span class="skin-close" aria-hidden="true">×</span></div>
+          <div class="skin-display"><div class="skin-source"><span>REDO ATT LYSSNA</span><span>LJUDTEST</span></div><h3 class="skin-song">Nattpass</h3><p class="skin-artist">Ny Teknik · egen testmusik</p><div class="skin-meters" aria-hidden="true"><div class="skin-meter"><span>L</span><div class="meter-segments"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="skin-meter"><span>R</span><div class="meter-segments"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div></div>
+          <div class="skin-eleven"><span class="skin-bolt skin-bolt-left" aria-hidden="true"></span><span class="skin-lead">TAKE IT TO</span><strong>ELEVEN</strong><span class="skin-bolt skin-bolt-right" aria-hidden="true"></span></div>
+          <div class="skin-footer"><span>ORIGINALLJUD</span><span class="skin-hint">VÄXLA EFFEKT</span></div>
+        </div></div></div>
     </div>
     <div class="expand-control"><button class="nt-button nt-button-secondary" id="expand" aria-expanded="false" aria-controls="expanded-content"><span id="expand-label">Jämför grafiken</span><i class="fi-arrow-right" id="expand-icon" aria-hidden="true"></i></button></div>
     <div id="expanded-content" hidden>
@@ -68,14 +73,15 @@
         <p class="media-caption">Tryck på markeringarna för en visuell genomgång. Det här är en skärmbild av webbversionen, inte ett spelbart smakprov.</p>
       </div>
       <div class="demo" id="demo-enhancer" hidden>
-        <div class="audio-player metal-player"><div class="metal-heading">ENHANCER <span>LJUDLABB</span></div>
-          <div class="audio-heading"><div><p class="nt-kicker">LJUDTEST</p><h3>Nattpass</h3><p class="track-credit">Ett eget musikstycke för experimentet</p></div><img src="assets/eleven-icon.png" width="64" height="64" alt="" loading="lazy"></div>
-          <p class="track-state" id="audio-state">Redo att lyssna</p>
-          <div class="audio-position"><span id="audio-time">0:00</span><div class="audio-progress" role="progressbar" aria-label="Uppspelning" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="audio-progress-fill"></span></div><span id="audio-duration">0:16</span></div>
-          <button class="eleven" id="eleven" aria-pressed="false"><span>Vrid upp till</span><strong>ELVA</strong><span id="effect-state">Effekt av</span></button>
-          <div class="audio-controls"><button id="play-audio" class="nt-button nt-button-secondary"><i class="fi-play-video" aria-hidden="true"></i> Lyssna</button><p>Tryck på <strong>Elva</strong> för att växla effekt.<br><span>Hörlurar rekommenderas.</span></p></div>
-        </div>
-        <p class="media-caption" id="audio-caption">En förberedd ljudjämförelse med den gamla Enhancer-motorn. Knappen växlar mellan två versioner av samma musikstycke. Spotify behövs inte.</p>
+<div class="skin-shell"><div class="enhancer-skin">
+          <div class="skin-titlebar"><span class="skin-grip"></span><strong>ENHANCER</strong><span class="skin-ridges"></span><button class="skin-close" id="skin-close" aria-label="Fäll ihop spelaren">×</button></div>
+          <div class="skin-display"><div class="skin-source"><span id="audio-state">REDO ATT LYSSNA</span><span>LJUDTEST</span></div><h3 class="skin-song">Nattpass</h3><p class="skin-artist">Ny Teknik · egen testmusik</p><div class="skin-meters" aria-hidden="true"><div class="skin-meter"><span>L</span><div class="meter-segments"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="skin-meter"><span>R</span><div class="meter-segments"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div></div>
+          <button class="skin-eleven" id="eleven" aria-pressed="false" aria-label="Take it to Eleven – växla ljudeffekt"><span class="skin-bolt skin-bolt-left" aria-hidden="true"></span><span class="skin-lead">TAKE IT TO</span><strong>ELEVEN</strong><span class="skin-bolt skin-bolt-right" aria-hidden="true"></span></button>
+          <div class="skin-footer"><span id="effect-state">ORIGINALLJUD</span><span class="skin-hint">VÄXLA EFFEKT</span></div>
+        </div></div>
+        <div class="audio-position"><span id="audio-time">0:00</span><div class="audio-progress" role="progressbar" aria-label="Uppspelning" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="audio-progress-fill"></span></div><span id="audio-duration">0:16</span></div>
+        <div class="audio-controls"><button id="play-audio" class="nt-button nt-button-secondary"><i class="fi-play-video" aria-hidden="true"></i> Lyssna</button><p>Tryck på <strong>Eleven</strong> för att växla effekt.<br><span>Hörlurar rekommenderas.</span></p></div>
+        <p class="media-caption" id="audio-caption">Samma utseende som vår Mac-app. Här växlar knappen mellan två förberedda versioner av vår egen testmusik, med och utan den gamla Enhancer-motorn. Spotify behövs inte.</p>
         <p class="audio-error" id="audio-error" role="status" hidden></p>
       </div>
       <div class="story">
@@ -89,6 +95,6 @@
   </section>
   <footer class="lab-footer" hidden><a id="standalone-link" href="./" target="_blank" rel="noopener">Öppna separat <i class="fi-link" aria-hidden="true"></i></a></footer>
 </main>
-<script type="module" src="app.js"></script>
+<script type="module" src="app.js?v=20261023-skin2"></script>
 </body>
 </html>
